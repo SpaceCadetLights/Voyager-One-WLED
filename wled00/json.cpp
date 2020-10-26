@@ -62,6 +62,12 @@ void deserializeSegment(JsonObject elem, byte it)
 
     //temporary, strip object gets updated via colorUpdated()
     if (id == strip.getMainSegmentId()) {
+      //Auto Audio mode disable change by isaac
+      if(elem["fx"] != effectCurrent){
+        AutoAudioEffectChanger = false;                            //Disable Auto Audio Effect Changer if Effect is changed in GUI
+      }
+      //end changes by isaac
+      
       effectCurrent = elem["fx"] | effectCurrent;
       effectSpeed = elem["sx"] | effectSpeed;
       effectIntensity = elem["ix"] | effectIntensity;
@@ -71,7 +77,10 @@ void deserializeSegment(JsonObject elem, byte it)
       effectPalette = elem["pal"] | effectPalette;
     } else { //permanent
       byte fx = elem["fx"] | seg.mode;
-      if (fx != seg.mode && fx < strip.getModeCount()) strip.setMode(id, fx);
+      if (fx != seg.mode && fx < strip.getModeCount()){
+        strip.setMode(id, fx);
+        AutoAudioEffectChanger = false;                            //Disable Auto Audio Effect Changer if Effect is changed in GUI changed by isaac
+      }
       seg.speed = elem["sx"] | seg.speed;
       seg.intensity = elem["ix"] | seg.intensity;
       seg.fft1 = elem["f1x"] | seg.fft1;

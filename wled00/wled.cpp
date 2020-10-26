@@ -256,7 +256,7 @@ void WLED::initAP(bool resetAP)
     return;
 
   if (!apSSID[0] || resetAP)
-    strcpy(apSSID, "Space-Cadets-Light");
+    strcpy(apSSID, "Voyager One");
   if (resetAP)
     strcpy(apPass, DEFAULT_AP_PASS);
   DEBUG_PRINT("Opening access point ");

@@ -102,7 +102,10 @@ void userLoop() {
 //----------Automatic Audio Effect Changer ------------
 
 changeDelayMs = (presetCycleTime * 100);
-  
+
+  if(presetCyclingEnabled) {     //If standard auto mode is on then cut off the audio reactive auto mode
+    AutoAudioEffectChanger = false;
+  }
 
 if (AutoAudioEffectChanger) {
 
