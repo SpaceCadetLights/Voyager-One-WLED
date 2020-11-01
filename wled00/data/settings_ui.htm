@@ -14,7 +14,7 @@
 		}
 		function H()
 		{
-			window.open("https://github.com/Aircoookie/WLED/wiki/Settings#user-interface-settings");
+			window.open("https://spacecadetslighting.com/support");
 		}
 		function B()
 		{
@@ -62,6 +62,7 @@
 			background: var(--bCol);
 			color: var(--tCol);
 			border: 0.3ch solid var(--bCol);
+			border-radius: 7px;
 			display: inline-block;
 			font-family: var(--cFn), Helvetica, sans-serif;
 			filter: drop-shadow( -5px -5px 5px var(--sCol) );
@@ -78,6 +79,7 @@
 			background: var(--bCol);
 			color: var(--dCol);
 			border: 0.5ch solid var(--bCol);
+			border-radius: 7px;
 			filter: drop-shadow( -5px -5px 5px var(--sCol) );
 			font-family: var(--cFn), Helvetica, sans-serif;
 		}
@@ -97,8 +99,11 @@
 	<form id="form_s" name="Sf" method="post">
 		<div class="helpB"><button type="button" onclick="H()">?</button></div>
 		<button type="button" onclick="B()">Back</button><button type="submit">Save</button><hr>
-		<h2>Web Setup</h2>
-		Server description: <input name="DS" maxlength="32"><br>
+		<h2>User Interface Setup</h2>
+		Light Name: <input name="DS" maxlength="32"><br>
+		This is the name that shows on the main screen. <br>
+		If you have multiple lights you can rename them<br>
+		to tell them apart. <br><br>
     Sync button toggles both send and receive: <input type="checkbox" name="ST"><br><br>
 		<hr><button type="button" onclick="B()">Back</button><button type="submit">Save</button>
 	</form>

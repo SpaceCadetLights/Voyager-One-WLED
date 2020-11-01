@@ -62,6 +62,7 @@ void deserializeSegment(JsonObject elem, byte it)
 
     //temporary, strip object gets updated via colorUpdated()
     if (id == strip.getMainSegmentId()) {
+      
       //Auto Audio mode disable change by isaac
       if(elem["fx"] != effectCurrent){
         AutoAudioEffectChanger = false;                            //Disable Auto Audio Effect Changer if Effect is changed in GUI

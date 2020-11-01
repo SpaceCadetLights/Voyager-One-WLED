@@ -125,7 +125,7 @@ void WLED::setup()
   EEPROM.begin(EEPSIZE);
   ledCount = EEPROM.read(229) + ((EEPROM.read(398) << 8) & 0xFF00);
   if (ledCount > MAX_LEDS || ledCount == 0)
-    ledCount = 30;
+    ledCount = 18; //Default number of leds, modified by isaac n. 
 
 #ifdef ESP8266
   #if LEDPIN == 3
@@ -314,6 +314,7 @@ void WLED::initConnection()
       DEBUG_PRINTLN("Access point disabled.");
       WiFi.softAPdisconnect(true);
       WiFi.mode(WIFI_STA);
+      //in the future add a conor change to the leds once wifi is connected sucessfully. isaac. 
     }
   }
   showWelcomePage = false;

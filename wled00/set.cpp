@@ -298,12 +298,7 @@ void handleSettingsSet(AsyncWebServerRequest *request, byte subPage)
   //SECURITY
   if (subPage == 6)
   {
-    if (request->hasArg("RS")) //complete factory reset
-    {
-      clearEEPROM();
-      serveMessage(request, 200, "All Settings erased.", "Connect to the light's WiFi to setup again",255);
-      doReboot = true;
-    }
+    
 
     bool pwdCorrect = !otaLock; //always allow access if ota not locked
     if (request->hasArg("OP"))
@@ -323,8 +318,20 @@ void handleSettingsSet(AsyncWebServerRequest *request, byte subPage)
       otaLock = request->hasArg("NO");
       wifiLock = request->hasArg("OW");
       aOtaEnabled = request->hasArg("AO");
+
+      if (request->hasArg("RS")) //complete factory reset
+    {
+      if (strcmp(otaPass,request->arg("OP").c_str()) == 0)  //check to see if the password is correct before allowing factory reset of light. Isaac edited.
+      {
+      clearEEPROM();
+      serveMessage(request, 200, "All Settings erased.", "Connect to the light's WiFi to setup again",255);
+      doReboot = true;
+      }
+      
+    }
     }
   }
+  
   #ifdef WLED_ENABLE_DMX // include only if DMX is enabled
   if (subPage == 7)
   {

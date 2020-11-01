@@ -815,14 +815,14 @@ const char JSON_mode_names[] PROGMEM = R"=====([
 "Twinklefox","Twinklecat","Halloween Eyes","Solid Pattern","Solid Pattern Tri","Spots","Spots Fade","Glitter","Candle","Fireworks Starburst",
 "Fireworks 1D","Bouncing Balls","Sinelon","Sinelon Dual","Sinelon Rainbow","Popcorn","Drip","Plasma","Percent","Ripple Rainbow",
 "Heartbeat","Pacifica","Candle Multi","Solid Glitter","Sunrise","Flow","Chunchun","Phased","Phased Noise","TwinkleUp",
-"Noise Pal","Sine","* Pixels","* Pixelwave","* Juggles","* Matripix","* Equalizer","* Plasmoid","* Puddles","* Midnoise",
-"* Noisemeter","** Freqwave","** Freqmatrix","** Spectral","* Waterfall","** Freqpixel","** Binmap","** Noisepeak","* Noisefire","* Puddlepeak",
-"** Noisemove","* 2D Plasma","Perlin Move","* Ripple Peak","2D FireNoise","2D Squared Swirl","2D Fire2012","2D DNA","2D Matrix","2D Meatballs"
+"Noise Pal","Sine","*  Pixels","*  Pixelwave","*  Juggles","*  Matripix","*  Equalizer","*  Plasmoid","*  Puddles","*  Midnoise",
+"*  Noisemeter",". *  Freqwave",". *  Freqmatrix",". *  Spectral","*  Waterfall",". *  Freqpixel",". *  Binmap",". *  Noisepeak","*  Noisefire","*  Puddlepeak",
+". *  Noisemove","*  2D Plasma","Perlin Move","*  Ripple Peak","2D FireNoise","2D Squared Swirl","2D Fire2012","2D DNA","2D Matrix","2D Meatballs"
 ])=====";
 
 
 const char JSON_palette_names[] PROGMEM = R"=====([
-"Default","* Random Cycle","* Color 1","* Colors 1&2","* Color Gradient","* Colors Only","Party","Cloud","Lava","Ocean",
+"Default",": Random Cycle",": Color 1",": Colors 1&2",": Color Gradient",": Colors Only","Party","Cloud","Lava","Ocean",
 "Forest","Rainbow","Rainbow Bands","Sunset","Rivendell","Breeze","Red & Blue","Yellowout","Analogous","Splash",
 "Pastel","Sunset 2","Beech","Vintage","Departure","Landscape","Beach","Sherbet","Hult","Hult 64",
 "Drywet","Jul","Grintage","Rewhi","Tertiary","Fire","Icefire","Cyane","Light Pink","Autumn",
