@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=500">
+	<meta charset="utf-8">
+	<title>Misc Settings</title>
+	<script>
+		function H()
+		{
+			window.open("https://github.com/Aircoookie/WLED/wiki/Settings#security-settings",'_system');
+		}
+		function B()
+		{
+			window.open("/settings","_self");
+		}
+		function U()
+		{
+			window.open("/update","_self");
+		}
+		function GetV()
+		{
+			//values injected by server while sending HTML
+		}
+	</script>
+	<style>
+		:root {
+			--aCol: #D9B310;
+			--bCol: #0B3C5D;
+			--cCol: #2c74bb;
+			--dCol: #328CC1;
+			--sCol: #000;
+		}
+		body {
+			font-family: Verdana, Helvetica, sans-serif;
+			text-align: center;
+			background: var(--cCol);
+			color: var(--dCol);
+			line-height: 2em;
+			font-size: 16px;
+			margin: 0;
+			background-attachment: fixed;
+		}
+		hr {
+			border-color: var(--dCol);
+			filter: drop-shadow( -5px -5px 5px var(--sCol) );
+		}
+		button {
+			background: var(--bCol);
+			color: var(--dCol);
+			border: 0.3ch solid var(--bCol);
+			display: inline-block;
+			filter: drop-shadow( -5px -5px 5px var(--sCol) );
+			font-size: 20px;
+			margin: 8px;
+			margin-top: 12px;
+		}
+		.helpB {
+			text-align: left;
+			position: absolute;
+			width:60px;
+		}
+		input {
+			background: var(--bCol);
+			color: var(--dCol);
+			border: 0.5ch solid var(--bCol);
+			filter: drop-shadow( -5px -5px 5px var(--sCol) );
+		}
+		input[type=number] {
+			width: 3em;
+		}
+	</style>
+</head>
+<body onload="GetV()">
+	<form id="form_s" name="Sf" method="post">
+		<div class="helpB"><button type="button" onclick="H()">?</button></div>
+		<button type="button" onclick="B()">Back</button><button class= "buttongreen" type="submit">Save & Reboot</button><hr>
+		<h2>Software Update</h2>
+
+		
+		<button type="button" onclick="U()">Manual Software Update</button><br><br>
+		
+
+<hr>
+
+		<h2>Factory Reset</h2>
+		Enter Admin Password to factory reset light.<br>
+		Then check the "factory reset" box below<br>
+		and tap "save & reboot" above.<br>
+		If your light has an issue contact Space Cadets.<br><br>
+        Password: <input class = "largeinput" type="password" name="OP" maxlength="32"><br>
+        Lock wireless software update: <input type="checkbox" name="NO"><br>
+		Deny access to WiFi settings if locked: <input type="checkbox" name="OW"><br>
+		Enable ArduinoOTA: <input type="checkbox" name="AO"><br><br>
+		-Factory Reset-<br>
+		<input type="checkbox" name="RS"><br>
+		All Settings and Presets will be erased.<br>
+		Contact Space Cadets to receive password<br>
+		and guidance on light reset & re-setup.<br>
+		
+		<h3>About</h3>
+		</a> Software Version ##VERSION##<!-- Autoreplaced from package.json --><br><br>
+		A huge thank you to everyone who helped create WLED!<br>
+		(c) 2016-2020 Christian Schwinne<br>
+		Modified For Space Cadets by Isaac N.<br>
+		<i>Licensed under the MIT license</i><br><br>
+		Server message: <span class="sip"> Response error! </span><hr>
+		<button type="button" onclick="B()">Back</button><button class= "buttongreen" type="submit">Save & Reboot</button>
+	</form>
+</body>
+</html>

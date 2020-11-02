@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content='width=device-width' name='viewport'>
+    <title>Software Update</title>
+    <script>function B() { window.history.back() }</script>
+    <style>
+        .bt {
+            background: rgb(150, 150, 150);
+            color: #fff;
+            font-family: Verdana, sans-serif;
+            border: .2ch solid #333;
+            border-radius: 10px;
+            box-shadow: 0px 2px 7px rgb(59, 59, 59);
+            display: inline-block;
+            font-size: 23px;
+            margin: 8px;
+            margin-top: 12px
+        }
+
+        .greenbt {
+            background: rgb(82, 170, 0);
+            color: #fff;
+            font-family: Verdana, sans-serif;
+            border: .1ch solid rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0px 2px 7px rgb(59, 59, 59);
+            display: inline-block;
+            font-size: 25px;
+            margin: 10px;
+            margin-top: 12px
+        }
+
+        input[type=file] {
+            font-size: 16px
+        }
+
+        input {
+            background: rgb(150, 150, 150);
+            color: var(--dCol);
+            font-size: 20px;
+            border: 0.5ch solid var(--bCol);
+            border-radius: 5px;
+            filter: drop-shadow(-5px -5px 5px var(--sCol));
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            text-align: center;
+            text-shadow: 0px 1px 4px #474747;
+            background: #5e5e5e;
+            color: #fff;
+            line-height: 200%
+        }
+
+        @font-face {
+            font-family: 'WIcons';
+            src: url('data:application/font-woff;charset=utf-8;base64,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') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .icons {
+            font-family: 'WIcons';
+            font-style: normal;
+            font-size: 60px;
+            line-height: 1;
+            display: inline-block;
+            margin: 9px 0 15px 0;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Software Update</h2>Installed version: 0.10.0<br><br>
+    You can only download the update in a browser. <br>
+    To Update open your computer or phone's browser<br>
+    Then enter the number below into the address bar.<br>
+    <h3 id="lightip"></h3>
+
+    
+    Browse to this page, then<br>
+    Click the cloud to download the latest Update! <br>
+    <i class="icons" onclick="openDownload()">&#xe415 </i> </a> <br>
+    After download completes tap "Choose File" and select the downloaded file.<br>
+    Then tap "Update Light!". <br>
+    After 30 seconds the light will reboot and reconnect to your WiFi.<br><br>
+    <form method='POST' action='/update' enctype='multipart/form-data'><input type='file' class="bt" name='update'
+            required><br><input type='submit' class="greenbt" value='Update Light!'></form><button type="button"
+        class="bt" onclick="B()">Back</button>
+
+    <script>
+        document.getElementById("lightip").innerHTML = window.location.hostname;
+
+        function openDownload() {
+            window.open("https://github.com/SpaceCadetLights/Voyager-One-Firmware/raw/main/VoyagerOneFirmware.bin", '_system');
+        }
+
+    </script>
+</body>
+
+</html>
