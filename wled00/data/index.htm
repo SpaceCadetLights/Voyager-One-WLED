@@ -352,7 +352,7 @@ Effect Speed */
     /* Solid Effect Mode */
     #staytop5 {
       top: 150px;
-      box-shadow: 0px 10px 10px var(--c-bg);
+      box-shadow: 0px 5px 7px var(--c-bg);
 
     }
 
@@ -566,6 +566,22 @@ Effect Speed */
       padding: 8px;
       margin: 10px;
       width: 230px;
+      font-family: HelveticaSound,Helvetica,Arial;
+      font-size: 19px;
+      background-color: var(--c-3);
+      color: var(--c-tx);
+      border: 0px solid white;
+      border-radius: 25px;
+      filter: drop-shadow(0px 0px 2px #000);
+      transition-duration: 0.5s;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+
+    .btngrid {
+      padding: 10px;
+      margin: 5px;
+      width: auto;
       font-family: HelveticaSound,Helvetica,Arial;
       font-size: 19px;
       background-color: var(--c-3);
@@ -890,6 +906,14 @@ Effect Speed */
         display: none;
       }
     }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 12px;
+      padding: 10px;
+    }
+
   </style>
 </head>
 
@@ -1014,7 +1038,7 @@ Effect Speed */
           <div class="sliderdisplay"></div>
         </div>
       </div>
-      <p class="labels">- Trebel Response +</p>
+      <p class="labels">- Treble Response +</p>
       <div class="staytop" id="staytop3">
         <i class="iconslarge slider-icon">&#xe412;</i>
         <div class="sliderwrap il">
@@ -1034,11 +1058,13 @@ Effect Speed */
       </div>
       <p class="labels">Effect Mode</p>
       <div class="staytop" id="staytop5">
-        <button class="btn" id="fxb0" onclick="setX(0);">Solid</button>
+        <button class="btn" id="fxb0" onclick="setX(0);">Solid</button><br>
       </div>
-      <div id="fxlist">
+      
+      <div id="fxlist" class="button-grid">
         Loading Effects...
-      </div>
+      
+    </div>
       <br>
     </div>
 
@@ -1476,9 +1502,9 @@ Effect Speed */
               for (i in json.effects) json.effects[i] = { "id": parseInt(i) + 1, "name": json.effects[i] };
               json.effects.sort(compare);
               for (i in json.effects) {
-                x += '<button class="btn" id="fxb' + json.effects[i].id + '" onclick="setX(' + json.effects[i].id + ');">' + json.effects[i].name + '</button><br>';
+                x += '<button class="btngrid" id="fxb' + json.effects[i].id + '" onclick="setX(' + json.effects[i].id + ');">' + json.effects[i].name + '</button>';
               }
-
+              
               json.palettes.shift(); //remove default
               for (i in json.palettes) json.palettes[i] = { "id": parseInt(i) + 1, "name": json.palettes[i] };
               json.palettes.sort(compare);

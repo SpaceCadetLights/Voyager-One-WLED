@@ -96,6 +96,11 @@
 		{
 			//values injected by server while sending HTML
 		}
+		function getName(){
+			var info = json.info;
+            var name = info.name;
+			d.getElementById('nameoflight').innerHTML = name;
+		}
 	</script>
 	<style>
 		:root {
@@ -152,6 +157,7 @@
 		input[type=number] {
 			width: 4em;
 		}
+		
 	</style>
 </head>
 <body onload="S()">
